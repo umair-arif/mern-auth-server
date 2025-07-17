@@ -1,6 +1,6 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import "dotenv/config";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRouter from "./routes/authRoutes.js";
@@ -14,7 +14,7 @@ const allowOrigins = ["http://localhost:5173"];
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: allowOrigins, credentials: true }));
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 // api end point
 app.get("/", (req, res) => {
