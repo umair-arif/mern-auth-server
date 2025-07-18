@@ -8,7 +8,7 @@ import connectDB from "../config/mongodb.js";
 import authRouter from "../routes/authRoutes.js";
 import userRouter from "../routes/userRoutes.js";
 
-// Initialize
+// Initialize Express App
 const app = express();
 connectDB();
 
@@ -24,5 +24,5 @@ app.get("/", (req, res) => {
   res.send("API running on Vercel");
 });
 
-// EXPORT for Vercel
-export const handler = serverless(app);
+// ✅ Default export for Vercel
+export default serverless(app);
