@@ -12,6 +12,7 @@ import userRouter from "../routes/userRoutes.js";
 const app = express();
 connectDB();
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
