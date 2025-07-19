@@ -16,10 +16,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: allowOrigins, credentials: true }));
 
-// api end point
+// api end point hvu
 app.get("/", (req, res) => {
   res.send("api working");
 });
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+
 app.listen(port, () => console.log(`Server started on port:${port}`));
