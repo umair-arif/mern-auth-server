@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
 
-const allowOrigins = ["https://mern-auth-client-iota.vercel.app"];
+const allowOrigins = [process.env.FRONTEND_URL];
 
 app.use(express.json());
 app.use(cookieParser());
